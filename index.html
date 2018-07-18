@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>What is Kenny wearing?</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        
+        .pic-container {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is Kenny wearing?</h1>
+    <div class="pic-container">
+        <img id="shirt" src="media/shirt2.png" />
+    </div>
+    <div class="pic-container">
+        <img id="pants" src="media/pants1.png" />
+    </div>
+    <script>
+        function configClothing(clothing, count) {
+            let num = Math.floor(Math.random() * count) + 1;
+            let imgSrc = `media/${clothing}${num}.png`;
+            document.getElementById(clothing).src = imgSrc;
+        }
+        
+        configClothing("shirt", 2);
+        configClothing("pants", 1);
+    </script>
+</body>
+    
+</html>
