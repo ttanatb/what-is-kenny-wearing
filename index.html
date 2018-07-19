@@ -17,10 +17,14 @@
     <title>What is Kenny wearing?</title>
     <style>
         img { height: 100%; }
-        h1, .pic-container { text-align: center; }
-        .pic-container {
+        h1, div { text-align: center; }
+        .clothing-container {
             height: 400px;
             width: 400px;
+            margin: 0 auto;
+        }
+        .shoe-container {
+            height: 200px;
             margin: 0 auto;
         }
     </style>
@@ -30,11 +34,14 @@
 </head>
 <body>
     <h1>What is Kenny wearing?</h1>
-    <div class="pic-container">
+    <div class="clothing-container">
         <img id="shirt" src="media/shirt2.png" />
     </div>
-    <div class="pic-container">
+    <div class="clothing-container">
         <img id="pants" src="media/pants1.png" />
+    </div>
+    <div class="shoe-container">
+        <img id="shoes" src="media/shoes1.png" />
     </div>
     <script>
         function configClothing(clothing, count) {
@@ -45,6 +52,7 @@
         
         configClothing("shirt", 7);
         configClothing("pants", 2);
+        configClothing("shoes", 1);
     </script>
 </body>
     
