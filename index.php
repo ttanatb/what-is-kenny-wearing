@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,11 +26,36 @@
             height: 200px;
             margin: 0 auto;
         }
+        body {
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     </style>
     
     <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
     <link rel="icon" href="media/favicon.ico" type="image/x-icon">
 </head>
+<?php
+$hua = filter_input(INPUT_SERVER, 'HTTP_USER_AGENT');
+$os = 'I have no idea...';
+
+if(preg_match('/android/i', $hua)) {
+    $os = 'Android';
+} elseif (preg_match('/linux/i', $hua)) {
+    $os = 'Linux';
+} elseif (preg_match('/iphone/i', $hua)) {
+    $os = 'iPhone';
+} elseif (preg_match('/macintosh|mac os x/i', $hua)) {
+    $os = 'Mac';
+} elseif (preg_match('/windows|win32/i', $hua)) {
+    $os = 'Windows';
+}
+if (strcmp($os, 'Mac') == 0 || strcmp($os, 'iPhone') == 0) {   
+?>
+<body style="background-image:url('media/404.jpg');background-color:#f7f7f7">
+<?php
+} else {
+?>
 <body>
     <h1>What is Kenny wearing?</h1>
     <div class="clothing-container">
@@ -54,6 +78,8 @@
         configClothing("pants", 2);
         configClothing("shoes", 1);
     </script>
+<?php 
+}
+?>
 </body>
-    
 </html>
